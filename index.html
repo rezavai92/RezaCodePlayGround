@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     
-    <title>rezaCPG - code playgroud for html+css+javascript</title>
+    <title> REZACPG - code playgroud for html+css+javascript</title>
 
     <style>
         .grid{
@@ -32,6 +33,14 @@
 
            height: 100%;
        } 
+       nav span{
+           font-size: 20px;
+
+       }
+       nav .span2{
+
+           font-size: 16px;
+       }
 
        @media screen  and (max-width: 768px) {
            .grid{
@@ -42,19 +51,32 @@
                grid-gap: 5%;
                min-height: 100vh;
            }
+           nav span{
+               font-size: 16px;
+           }
+           nav .span2{
+            font-size: 14px;
+           }
+
+          
        }
        
        
     </style>
 </head>
 <body>
-
+    <nav class="navbar navbar-light" style="background-color:#404040;" >
+        <span style="font-weight: 700; color:white;" class="navbar-brand mb-0 h1">REZA<span style="font-variant: small-caps;" >cpg</span>
+        <span  class="span2" style="font-weight: lighter;">- A simple Code Playground </span>
+    </span>
+        
+      </nav>
     
    <div class="grid">
 
     <div class="html">
 
-        <p style="padding: 0px;margin: 0px; text-align: center; " >HTML</p>
+        <p style="padding: 0px;margin: 0px; text-align: center; font-weight: bold;" >HTML</p>
         <textarea oninput="myFunc(event)" 
         
         onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"
@@ -72,7 +94,7 @@
         
     </div>
     <div class="css">
-        <p style="padding: 0px;margin: 0px; text-align: center; " >CSS</p>
+        <p style="padding: 0px;margin: 0px; text-align: center; font-weight: bold; " >CSS</p>
         <textarea oninput="myFunc(event)" name="cssTextArea" id="cssTextArea" 
         
         onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}
@@ -81,7 +103,7 @@
     </div>
     
     <div class="iframe">
-        <p style="padding: 0px;margin: 0px; text-align: center; " >OUTPUT</p>
+        <p style="padding: 0px;margin: 0px; text-align: center; font-weight: bold;" >OUTPUT</p>
         <iframe id="output" name="output" src="iframe.html" frameborder="1"></iframe>
         
     </div>
