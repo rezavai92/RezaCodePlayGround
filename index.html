@@ -3,9 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
     <title>Document</title>
+
+    <style>
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 2px;
+            min-height: 100vh;
+
+        }
+       textarea{
+           background-color: black;
+           color: white;
+           width: 100%;
+           height: 100%;
+           text-align: start;
+           
+       }
+       iframe{
+           width: 100%;
+           height: 100%;
+       }
+
+       .iframe{
+
+           height: 100%;
+       } 
+       
+       
+    </style>
 </head>
 <body>
 
+    
+   <div class="grid">
+
+    <div class="html">
+
+        <p style="padding: 0px;margin: 0px; text-align: center; " >HTML</p>
+        <textarea oninput="myFunc(event)" 
+        
+        onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"
+        name="htmlTextArea" id="htmlTextArea" ><!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">          
+</head>
+<body>
+        
+</body>
+</html>
+    </textarea>
+        
+    </div>
+    <div class="css">
+        <p style="padding: 0px;margin: 0px; text-align: center; " >CSS</p>
+        <textarea oninput="myFunc(event)" name="cssTextArea" id="cssTextArea" 
+        
+        onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}
+        "
+        ></textarea>
+    </div>
+    
+    <div class="iframe">
+        <p style="padding: 0px;margin: 0px; text-align: center; " >OUTPUT</p>
+        <iframe id="output" name="output" src="iframe.html" frameborder="1"></iframe>
+        
+    </div>
+
+  
+   <script>
+     var html;
+     var css;
+
+    
+    
+       
+       function myFunc(e){
+        console.log("running")
+
+          if(e.target.id=="cssTextArea"){
+
+            css =e.target.value;
+          }
+
+          else{
+              html=e.target.value;
+          }
+         
+         
+         var final = html+"<style>"+css +"</style>";
+
+         
+          
+        
+
+        //  console.log(JSON.parse(html))
+        //console.log(typeof(html))
+        
+        document.getElementById("output").srcdoc=final;
+       }
+   </script>
 </body>
 </html>
